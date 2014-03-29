@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="fr.while42" version="1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>weixin-phonegap</name>
+    <js-module name="weixin-phonegap" src="www/weixin-phonegap.js">
+        <clobbers target="cordova.plugins.weixin-phonegap" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Device">
+                <param name="ios-package" value="CDVDevice"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVDevice.h" />
+        <source-file src="src/ios/CDVDevice.m" />
+    </platform>
+</plugin>
